@@ -1,4 +1,4 @@
-package pe.edu.cibertec.proyectomatriculas.model.request;
+package pe.edu.cibertec.cl1_matriculas.model.request;
 
 import lombok.Data;
 import java.util.Date;

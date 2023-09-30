@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.cibertec.proyectomatriculas.model.bd.Usuario;
-import pe.edu.cibertec.proyectomatriculas.model.request.UsuarioRequest;
-import pe.edu.cibertec.proyectomatriculas.model.response.ResultadoResponse;
-import pe.edu.cibertec.proyectomatriculas.service.UsuarioService;
+import pe.edu.cibertec.cl1_matriculas.model.bd.Usuario;
+import pe.edu.cibertec.cl1_matriculas.model.request.UsuarioRequest;
+import pe.edu.cibertec.cl1_matriculas.model.response.ResultadoResponse;
+import pe.edu.cibertec.cl1_matriculas.service.UsuarioService;
 
 import java.util.List;
 

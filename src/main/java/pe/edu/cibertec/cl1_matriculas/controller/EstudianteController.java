@@ -1,13 +1,13 @@
-package pe.edu.cibertec.proyectomatriculas.controller;
+package pe.edu.cibertec.cl1_matriculas.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.cibertec.proyectomatriculas.model.bd.Estudiante;
-import pe.edu.cibertec.proyectomatriculas.model.request.EstudianteRequest;
-import pe.edu.cibertec.proyectomatriculas.model.response.ResultadoResponse;
-import pe.edu.cibertec.proyectomatriculas.service.EstudianteService;
+import pe.edu.cibertec.cl1_matriculas.model.bd.Estudiante;
+import pe.edu.cibertec.cl1_matriculas.model.request.EstudianteRequest;
+import pe.edu.cibertec.cl1_matriculas.model.response.ResultadoResponse;
+import pe.edu.cibertec.cl1_matriculas.service.EstudianteService;
 
 import java.util.List;
 

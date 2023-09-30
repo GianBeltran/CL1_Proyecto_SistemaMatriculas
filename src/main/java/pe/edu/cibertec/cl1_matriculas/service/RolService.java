@@ -2,10 +2,10 @@ package pe.edu.cibertec.cl1_matriculas.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import pe.edu.cibertec.proyectomatriculas.model.bd.Rol;
-import pe.edu.cibertec.proyectomatriculas.model.request.RolRequest;
-import pe.edu.cibertec.proyectomatriculas.model.response.ResultadoResponse;
-import pe.edu.cibertec.proyectomatriculas.repository.RolRepository;
+import pe.edu.cibertec.cl1_matriculas.model.bd.Rol;
+import pe.edu.cibertec.cl1_matriculas.model.request.RolRequest;
+import pe.edu.cibertec.cl1_matriculas.model.response.ResultadoResponse;
+import pe.edu.cibertec.cl1_matriculas.repository.RolRepository;
 
 import java.util.List;
 

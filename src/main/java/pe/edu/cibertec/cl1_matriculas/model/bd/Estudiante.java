@@ -1,4 +1,4 @@
-package pe.edu.cibertec.proyectomatriculas.model.bd;
+package pe.edu.cibertec.cl1_matriculas.model.bd;
 
 import jakarta.persistence.*;
 import lombok.Getter;
