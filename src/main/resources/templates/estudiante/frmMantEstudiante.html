@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>SISTEMA DE MATRICULAS</title>
+</head>
+<body>
+<script th:src="@{/scripts/web/estudiante/frmMantEstudiante.js}" type="text/javascript"></script>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="card ">
+    <div class="card-header text-bg-dark mb-3">Mantenimiento de Estudiantes</div>
+    <div class="card-body">
+        <button id="btnagregar" type="button" class="btn btn-primary"><i class="fas fa-plus"></i>Agregar Estudiante</button>
+        <hr />
+        <div id="mensaje"></div>
+        <table id="tblestudiante" class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDO</th>
+                <th scope="col">FECHA NAC.</th>
+                <th scope="col">DIRECCIÓN</th>
+                <th scope="col">CORREO</th>
+                <th scope="col">TELEFONO</th>
+                <th scope="col">GRADO</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="estu :${listaEstudiantes}">
+                <td th:text="${estu.idestudiante}"></td>
+                <td th:text="${estu.nomestudiante}"></td>
+                <td th:text="${estu.apeestudiante}"></td>
+                <td th:text="${estu.fechanac}"></td>
+                <td th:text="${estu.direccion}"></td>
+                <td th:text="${estu.correo}"></td>
+                <td th:text="${estu.telefono}"></td>
+                <td th:text="${estu.grado}"></td>
+                <td>
+                    <button type="button" class="btn btn-info btnactualizar"
+                            th:data-idestudiante="${estu.idestudiante}"
+                            th:data-nomestudiante="${estu.nomestudiante}"
+                            th:data-apeestudiante="${estu.apeestudiante}"
+                            th:data-fechanac="${estu.fechanac}"
+                            th:data-direccion="${estu.direccion}"
+                            th:data-correo="${estu.correo}"
+                            th:data-telefono="${estu.telefono}"
+                            th:data-grado="${estu.grado}">
+                        <i class="fas fa-edit"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal Registrar / Actualizar Estudiante -->
+<div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Estudiante</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="txtNombreEstu" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombreEstu">
+                </div>
+                <div class="mb-3">
+                    <label for="txtApellidoEstu" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="txtApellidoEstu">
+                </div>
+                <div class="mb-3">
+                    <label for="txtFechaEstu" class="form-label">Fecha Nacimiento</label>
+                    <input type="text" class="form-control" id="txtFechaEstu">
+                </div>
+                <div class="mb-3">
+                    <label for="txtDireccionEstu" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="txtDireccionEstu">
+                </div>
+                <div class="mb-3">
+                    <label for="txtCorreoEstu" class="form-label">Correo</label>
+                    <input type="text" class="form-control" id="txtCorreoEstu">
+                </div>
+                <div class="mb-3">
+                    <label for="txtTelefonoEstu" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="txtTelefonoEstu">
+                </div>
+                <div class="mb-3">
+                    <label for="txtGradoEstu" class="form-label">Grado</label>
+                    <input type="text" class="form-control" id="txtGradoEstu">
+                </div>
+
+                <input type="hidden" id="hddcodestu" value="0">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                <button type="button" id="btnguardar" class="btn btn-primary"><i class="fas fa-save"></i>Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
