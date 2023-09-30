@@ -1,0 +1,102 @@
+/*--------------------------------------------------*/
+CREATE TABLE estudiantes(
+idestudiante INT PRIMARY KEY AUTO_INCREMENT,
+nomestudiante VARCHAR(30),
+apeestudiante VARCHAR(30),
+fechanac DATE,
+direccion VARCHAR(30),
+correo VARCHAR(50),
+telefono VARCHAR(40),
+grado VARCHAR(30)
+);
+
+CREATE TABLE matriculas(
+idmatricula INT PRIMARY KEY AUTO_INCREMENT,
+idestudiante INT,
+yearacademico INT,
+fechmatric DATE,
+estadomatri INT,
+FOREIGN KEY (idestudiante) REFERENCES estudiantes(idestudiante)
+);
+
+CREATE TABLE pagos(
+idpago INT PRIMARY KEY AUTO_INCREMENT,
+idmatricula INT,
+fechapago DATE,
+montopago NUMERIC(8,2),
+estadopago INT,
+FOREIGN KEY (idmatricula) REFERENCES matriculas(idmatricula)
+);
+
+/*--------------------------------------------------*/
+CREATE TABLE roles(
+idrol INT PRIMARY KEY AUTO_INCREMENT,
+nomrol VARCHAR(30)
+);
+
+CREATE TABLE usuarios(
+iduser INT PRIMARY KEY AUTO_INCREMENT,
+usuario VARCHAR(30),
+clave VARCHAR(30),
+idrol INT,
+FOREIGN KEY (idrol) REFERENCES roles(idrol)
+);
+
+CREATE TABLE profesores(
+idprofesor INT PRIMARY KEY AUTO_INCREMENT,
+nomprofesor VARCHAR(30),
+apeprofesor VARCHAR(30),
+correo VARCHAR(50)
+);
+
+/*--------------------------------------------------*/
+-- Insertar registros en la tabla roles
+INSERT INTO roles VALUES (null, 'Administrador');
+INSERT INTO roles VALUES (null, 'Profesor');
+INSERT INTO roles VALUES (null, 'Estudiante');
+
+-- Insertar registros en la tabla usuarios
+INSERT INTO usuarios VALUES (null, 'admin001', 'claveadmin', 1);
+INSERT INTO usuarios VALUES (null, 'prof001', 'claveprof', 2);
+INSERT INTO usuarios VALUES (null, 'est001', 'claveest', 3);
+
+-- Insertar registros en la tabla estudiantes
+INSERT INTO estudiantes VALUES (null, 'Juan', 'Pérez', '2005-03-15', 'Calle 123', 'juan@example.com', '123456789', '3ro de secundaria');
+INSERT INTO estudiantes VALUES (null, 'Ana', 'Gómez', '2006-07-22', 'Av. Principal', 'ana@example.com', '987654321', '1ro de primaria');
+
+-- Insertar registros en la tabla matriculas
+INSERT INTO matriculas VALUES (null, 1, 2023, '2023-09-15', 1); -- Estudiante Juan Pérez matriculado en 2023
+INSERT INTO matriculas VALUES (null, 2, 2023, '2023-09-15', 1); -- Estudiante Ana Gómez matriculada en 2023
+
+-- Insertar registros en la tabla pagos
+INSERT INTO pagos VALUES (null, 1, '2023-09-20', 500.00, 1); -- Pago para la matrícula de Juan Pérez en 2023
+INSERT INTO pagos VALUES (null, 2, '2023-09-20', 350.00, 1); -- Pago para la matrícula de Ana Gómez en 2023
+
+-- Insertar registros en la tabla profesores
+INSERT INTO profesores VALUES (null, 'María', 'López', 'maria@example.com');
+INSERT INTO profesores VALUES (null, 'Carlos', 'Rodríguez', 'carlos@example.com');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
